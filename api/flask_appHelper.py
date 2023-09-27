@@ -5,9 +5,9 @@ initProblemID = CallableCount(1)
 listOfProblems = [0]
 
 # helper for newProblem()
-def makeNewProblem():
+def makeNewProblem(size):
     id = initProblemID()
-    newProblem = Problem(id)
+    newProblem = Problem(id, size)
     listOfProblems.append(newProblem)
     
     return newProblem

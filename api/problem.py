@@ -1,7 +1,7 @@
 # class for problem
 class Problem():
     # initializing variables for each problem object
-    def __init__(self, problemID):
+    def __init__(self, problemID, size):
         self.problemID = problemID
         self.encodedBin = "####"
         self.finished = False
@@ -9,6 +9,7 @@ class Problem():
         self.lastAddedBin = 0
         self.totalLen = 0
         self.totalSize = 0
+        self.size = size
     
     # ending problem
     def endProblem(self):
@@ -30,7 +31,7 @@ class Problem():
         else:
             success = False
             for binNum in range(1, len(self.bin)+1):
-                if sum(self.bin[binNum]) + newItem <= 100:
+                if sum(self.bin[binNum]) + newItem <= self.size:
                     self.bin[binNum].append(newItem)
                     self.lastAddedBin = binNum
                     success = True

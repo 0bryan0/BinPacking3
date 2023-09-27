@@ -6,15 +6,15 @@ from flask_appHelper import *
 app = Flask(__name__)
 
 
-@app.route('/newproblem/')
-def newProblem():
+@app.route('/newproblem/<int:size>')
+def newProblem(size):
     """Create new problem for bin packing
 
     Returns:
         problemID (int) -- integer that can be used to reference a particular set of bins that are being packed
         binEncoding (string) -- string representation of an empty set containing no bins
     """
-    newProblemID = makeNewProblem()
+    newProblemID = makeNewProblem(size)
     
     return {
         "problemID": newProblemID.problemID,
