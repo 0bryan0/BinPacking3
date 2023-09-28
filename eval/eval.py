@@ -13,7 +13,7 @@ def hello():
 
 @app.route('/compare/<int:size>')
 def eval(size):
-    results = tests.compare_algorithms(["alex"], size)
+    results = tests.compare_algorithms(["alex", "carla"], size)
     
     return results
 

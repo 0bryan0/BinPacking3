@@ -16,6 +16,11 @@ services:
         expose:
           - "5000"
 
+    carla:
+        build: ./carla
+        expose:
+          - "5000"
+
     storage:
         build: ./storage
         expose:
