@@ -26,5 +26,5 @@ def generate_cases(size, case_length, num_cases, num_permutations):
 
 def get_cases(size):
     if size not in cases:
-        cases[size] = generate_cases(size, 10, 10, 10)
+        cases[size] = generate_cases(size, 100, 10, 10)
     return cases[size]

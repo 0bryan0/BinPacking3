@@ -1,5 +1,5 @@
 # CS347-bin-packing
-Carla is a modified version of the code provided for solving bin-packing problems. It places items in the most full container they fit in.
+Alex is the default provided for solving bin-packing problems. It greedily places items in the first container they fit in.
 
 ## Usage:
 
@@ -8,7 +8,7 @@ Carla is a modified version of the code provided for solving bin-packing problem
     - "problemID": an integer ID needed for later calls
     - "binEncoding": a sring encoding the newly created bin
 
-/placeitem/\<problemID>/\<int:itemSize>: places the item in the most full bin it fits in and returns a dict with:
+/placeitem/\<problemID>/\<int:itemSize>: places the item in the first bin it fits in and returns a dict with:
 
     - "ID": the problemID
     - "size": the size of the placed item
@@ -26,4 +26,4 @@ Carla is a modified version of the code provided for solving bin-packing problem
 
 
 ## Credit:
-Carla was modified from code provided by Matthew Lepinski
+Alex was modified from code provided by Matthew Lepinski

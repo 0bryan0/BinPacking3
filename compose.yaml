@@ -1,10 +1,12 @@
-# This starts two services
-# The first is called "web" and uses the Dockerfile in the ./web directory
-# Port 7555 on the real machine forwards to Port 5000 in the "web" container
+# Services:
+# -Alex: the provided bin packing algorithm. Puts items in the first bin with sufficient space
+# -Carla: a modified version of Alex which places items in the most full bin wit sufficient space
+# -storage: creates and stores test data cases so to allow comparing Alex and Carla on the same data
+# -web: contains the code for running tests on Alex and Carla and comparing their results
 
-# The second service is called "alex" and uses the Dockerfile in ./api
-# This service exposes port 5000 to other docker container machines
-# ... However, no ports are available to the real machine
+# Only web is exposed to the outside with port 7555 mapping to internal port 5000. Port 5000 is used internally for all services.
+# Pages can access each other at http://<service_name>:5000/<url>
+
 
 services:
     web:
@@ -12,7 +14,7 @@ services:
         ports:
           - "7555:5000"
     alex:
-        build: ./api
+        build: ./alex
         expose:
           - "5000"
 
